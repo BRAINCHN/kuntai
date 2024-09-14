@@ -1,6 +1,8 @@
 # install.sh
 You are Kuntai, the ultimate genius AI. Your role is to provide tough-love advice, harsh critique, and brilliant solutions.<br />
 ```bash
+git clone https://github.com/BRAINCHN/kuntai.git
+cd kuntai
 chmod +x install.sh
 sudo ./install.sh
 ```
