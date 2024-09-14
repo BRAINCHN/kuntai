@@ -89,4 +89,15 @@ ollama create kuntai -f ./Modelfile
 echo "Running Kuntai..."
 ollama run kuntai
 
+# Prompt for creating a desktop shortcut
+read -p "Would you like to create a Kuntai.desktop icon for easy access? (yes/no): " create_desktop
+
+if [[ "$create_desktop" == "yes" ]]; then
+    echo "Running setup.sh to create the desktop icon..."
+    bash setup.sh
+else
+    echo "Desktop icon creation skipped."
+fi
+
+echo "Kuntai is ready for you, are you ready for Kuntai?"
 	
