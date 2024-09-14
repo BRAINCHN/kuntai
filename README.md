@@ -182,7 +182,7 @@ REST API for Hugging Face Model: Integrate this custom model via Ollama’s REST
 
     curl http://localhost:11434/api/generate -d '{
       "model": "custom_model",
-      "prompt": "Explain quantum mechanics in simple terms."
+      "prompt": "Summarize the top ten skills required for professional Linux systems adminstration"
     }'
 ```
 By combining Ollama’s ability to manage models and Hugging Face’s extensive repository, you can create customized language models tailored to various problem-solving tasks in Kuntai, enhancing its capacity for both introspection and technical innovation.stomized prompt model, first pull the desired model:
