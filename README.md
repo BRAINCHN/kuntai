@@ -5,4 +5,6 @@ chmod +x install.sh
 sudo ./install.sh
 ```
 
-updates system creates venv installs ollama and huggingface dependenices downloads a model from huggingface and creates kustom kuntai model from simple prompt 
+creation of Kuntai.desktop icon is optional choice in the install. setup.sh is for the Kuntai.desktop button<br />
+
+updates system creates venv installs ollama and huggingface dependenices downloads a model from huggingface and creates Kuntai model from simple prompt suitable for Linux Ubuntu 22.04LTS and Linux Mint<br /> 
