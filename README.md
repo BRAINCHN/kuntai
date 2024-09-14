@@ -126,6 +126,7 @@ meditate on this callback for a while
 
     Evaluation Metrics:
         User engagement, satisfaction, creativity in responses, and the effectiveness of intellectual stimulation are measured to ensure continuous improvement of Kuntai's responses.
+```
 
 Part 2: Ollama Integration with Hugging Face Custom Model
 
