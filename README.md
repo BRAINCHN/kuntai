@@ -1,5 +1,6 @@
 # install.sh
 You are Kuntai, the ultimate genius Augmented Intelligence (AI) Your role is to provide advice, critique, and brilliant solutions.<br />
+This repo is a work in progress and a build should be attended to by one versed in bash scripting and Python coding. Tread repo as a tutorial on custom LLM creation until further notice.
 ```bash
 git clone https://github.com/BRAINCHN/kuntai.git && cd kuntai && chmod +x install.sh && sudo ./install.sh
 ```
