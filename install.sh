@@ -1,7 +1,6 @@
 #!/bin/bash
-# fast slam for a local Kuntai
-# save as install.sh
-# chmod+x install.sh && sudo .,/install.sh
+# fast slam for a local Kuntai using DeepSeek-Coder-V2-Lite-Instruct
+
 # Update and install required system dependencies
 echo "Updating system and installing dependencies..."
 sudo apt update
@@ -32,27 +31,28 @@ else
     echo "Ollama is already installed."
 fi
 
-# Clone Llama 3 model from Hugging Face
-echo "Cloning Llama 3 model from Hugging Face..."
-git clone https://huggingface.co/models/deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct
+# Download DeepSeek-Coder-V2-Lite-Instruct model from Hugging Face
+echo "Downloading DeepSeek-Coder-V2-Lite-Instruct model from Hugging Face..."
+python3 -c "from huggingface_hub import snapshot_download snapshot_download(repo_id='deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct', local_dir='./DeepSeek-Coder-V2-Lite-Instruct')
+"
 
 # Create Modelfile to import Hugging Face model into Ollama
 echo "Creating Modelfile for Kuntai DeepSeek-Coder-V2-Lite-Instruct..."
 cat <<EOL > Modelfile
-FROM ./DeepSeek-Coder-V2-Lite-Instruct  # Path to your favorite model
+FROM ./DeepSeek-Coder-V2-Lite-Instruct  # Path to the downloaded model
 
 PARAMETER stop "<|im_start|>"
 PARAMETER stop "<|im_end|>"
 EOL
 
 # Create the model in Ollama
-echo "Creating the Llama 3 model in Ollama..."
-ollama create llama3-kuntai -f ./Modelfile
+echo "Creating the Kuntai model in Ollama..."
+ollama create kuntai -f ./Modelfile
 
 # Customize Kuntai Modelfile
 echo "Customizing Modelfile for Kuntai..."
 cat <<EOL > Modelfile
-FROM llama3-kuntai  # This is the imported Llama 3 model
+FROM kuntai  # This is the imported DeepSeek-Coder-V2-Lite-Instruct model
 
 PARAMETER stop "<|im_start|>"
 PARAMETER stop "<|im_end|>"
@@ -89,8 +89,22 @@ ollama create kuntai -f ./Modelfile
 read -p "Would you like to create a Kuntai.desktop icon for easy access? (yes/no): " create_desktop
 
 if [[ "$create_desktop" == "yes" ]]; then
-    echo "Running setup.sh to create the desktop icon..."
-    bash setup.sh
+    # Create the desktop icon
+    echo "Creating Kuntai.desktop icon..."
+    cat <<EOL > ~/Desktop/Kuntai.desktop
+    [Desktop Entry]
+    Version=1.0
+    Name=Kuntai
+    Comment=Activate Kuntai AI
+    Exec=gnome-terminal -- bash -c 'ollama run kuntai; exec bash'
+    Icon=utilities-terminal
+    Terminal=true
+    Type=Application
+    EOL
+
+    # Make it executable
+    chmod +x ~/Desktop/Kuntai.desktop
+    echo "Kuntai desktop icon created successfully."
 else
     echo "Desktop icon creation skipped."
 fi
@@ -99,5 +113,5 @@ fi
 echo "Running Kuntai..."
 ollama run kuntai
 
-echo "Kuntai is ready for you, are you ready for Kuntai?"
-echo "type exit or press Ctrl+C to stop Kuntai"	
+echo "Kuntai is ready for you. Are you ready for Kuntai?"
+echo "Type 'exit' or press Ctrl+C to stop Kuntai."
