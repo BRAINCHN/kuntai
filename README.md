@@ -28,6 +28,7 @@ Kuntai, designed to offer tough-love coaching, structured feedback, and insight 
 
     Evaluation Metrics:
         User engagement, satisfaction, creativity in responses, and the effectiveness of intellectual stimulation are measured to ensure continuous improvement of Kuntai's responses.
+
 ```
 
 
@@ -72,53 +73,45 @@ Part 2: Ollama Integration with Hugging Face Custom Model
 
     Running Models from the Library: For example, to run the Llama 3.1 model (8B version):
 
-    bash
-
-ollama run llama3.1
-
+```bash
+ollama run phi
+```
 To create a customized prompt model, first pull the desired model:
 
-bash
-
-ollama pull llama3.1
-
+```bash
+ollama pull phi
+```
 Then, customize it in a Modelfile:
-
-bash
-
+```python
 FROM llama3.1
 PARAMETER temperature 1
-SYSTEM "You are Mario from Super Mario Bros. Answer as Mario."
-
+SYSTEM "You are Kuntai the genius solutions architect"
+```
 After editing the Modelfile, create and run the model:
 
-bash
-
-ollama create mario -f ./Modelfile
-ollama run mario
+```bash
+ollama create kuntai -f ./Modelfile
+ollama run kuntai
 
 Import Hugging Face Models: To use Hugging Face models with Ollama, download the model in GGUF or PyTorch format from Hugging Face, then modify a Modelfile to import it:
 
-bash
-
+```bash
 FROM ./huggingface_model.gguf
 ollama create custom_model -f Modelfile
-
+```
 Once created, you can run it as:
-
-bash
-
-ollama run custom_model
-
+```bash
+ollama run kuntai
+```
 REST API for Hugging Face Model: Integrate this custom model via Ollama’s REST API:
 
-bash
+```bash
 
     curl http://localhost:11434/api/generate -d '{
       "model": "custom_model",
       "prompt": "Explain quantum mechanics in simple terms."
     }'
-
+```
 By combining Ollama’s ability to manage models and Hugging Face’s extensive repository, you can create customized language models tailored to various problem-solving tasks in Kuntai, enhancing its capacity for both introspection and technical innovation.stomized prompt model, first pull the desired model:
 
 ```bash
