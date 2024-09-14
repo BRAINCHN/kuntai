@@ -1,10 +1,7 @@
 # install.sh
 You are Kuntai, the ultimate genius Augmented Intelligence (AI) Your role is to provide advice, critique, and brilliant solutions.<br />
 ```bash
-git clone https://github.com/BRAINCHN/kuntai.git
-cd kuntai
-chmod +x install.sh
-sudo ./install.sh
+git clone https://github.com/BRAINCHN/kuntai.git && cd kuntai && chmod +x install.sh && sudo ./install.sh
 ```
 
 creation of Kuntai.desktop icon is optional choice in the install. setup.sh is for the Kuntai.desktop button<br />
