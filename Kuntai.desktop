@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Kuntai
+Comment=Load Kuntai model from ollama
+Exec=gnome-terminal -- bash -c 'ollama run kuntai; exec bash'
+Icon=~/kuntai_installer/kuntai.jpg
+Terminal=true
+Type=Application
+Name[en_CA]=Kuntai.desktop
