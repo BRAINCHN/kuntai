@@ -119,19 +119,23 @@ ollama pull phi
 ```
 Then, customize it in a Modelfile:
 
-```python
+```bash
 FROM phi
 PARAMETER temperature 1
 SYSTEM "You are Kuntai the genius solutions provider"
 ```
+
 After editing the Modelfile, create and run the model:
 
 ```bash
+
 ollama create kuntai -f ./Modelfile
 ollama run kuntai
 ```
+
 Import Hugging Face Models: To use Hugging Face models with Ollama, download the model in GGUF or PyTorch format from Hugging Face, then modify a Modelfile to import it:
-```
+
+
 ```bash
 FROM ./huggingface_model.gguf
 ollama create custom_model -f Modelfile
