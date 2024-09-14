@@ -34,12 +34,12 @@ fi
 
 # Clone Llama 3 model from Hugging Face
 echo "Cloning Llama 3 model from Hugging Face..."
-git clone https://huggingface.co/models/llama-3-7b-hf
+git clone https://huggingface.co/models/deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct
 
 # Create Modelfile to import Hugging Face model into Ollama
-echo "Creating Modelfile for Llama 3 model..."
+echo "Creating Modelfile for Kuntai DeepSeek-Coder-V2-Lite-Instruct..."
 cat <<EOL > Modelfile
-FROM ./llama-3-7b-hf  # Path to the Llama 3 7B Hugging Face model
+FROM ./DeepSeek-Coder-V2-Lite-Instruct  # Path to your favorite model
 
 PARAMETER stop "<|im_start|>"
 PARAMETER stop "<|im_end|>"
