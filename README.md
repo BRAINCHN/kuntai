@@ -103,7 +103,8 @@ Once created, you can run it as:
 ```bash
 ollama run kuntai
 ```
-REST API for Hugging Face Model: Integrate this custom model via Ollama’s REST API:
+REST API for Hugging Face Model: Integrate this custom model via Ollama’s REST API:<br />
+meditate on this callback for a while
 
 ```bash
 
@@ -149,7 +150,7 @@ REST API for Hugging Face Model: Integrate this custom model via Ollama’s REST
 ```bash
       curl http://localhost:11434/api/generate -d '{
       "model": "custom_model",
-      "prompt": "Explain quantum mechanics in simple terms."
+      "prompt": "Design an easier way to install Kuntai"
     }'
 ```
 
