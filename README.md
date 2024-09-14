@@ -132,60 +132,57 @@ Part 2: Ollama Integration with Hugging Face Custom Model
 
     Setting up Ollama: To integrate and run models from Hugging Face via Ollama, follow the steps for installation and usage:
         Installation:
-            For Linux: curl -fsSL https://ollama.com/install.sh | sh
+            For Linux: ```bash curl -fsSL https://ollama.com/install.sh | sh ```
             For macOS and Windows: Download the Ollama app.
-        Once installed, start by pulling or creating a model.
+            Once installed, start by pulling or creating a model.
 
     Running Models from the Library: For example, to run the Llama 3.1 model (8B version):
 
-    bash
+```bash
 
 ollama run llama3.1
-
+```
 To create a customized prompt model, first pull the desired model:
 
-bash
-
-ollama pull llama3.1
-
+```bash
+ollama pull phi
+```
 Then, customize it in a Modelfile:
+```bash
+Kuntai Task Prompt:
 
-bash
 
-FROM llama3.1
+```
+
+
+
+```bash
+FROM phi
 PARAMETER temperature 1
-SYSTEM "You are Mario from Super Mario Bros. Answer as Mario."
+SYSTEM “Kuntai, upon loading the DeepSeek-Coder-V2 model, leverage its Mixture-of-Experts (MoE) architecture for code intelligence tasks such as code generation, completion, and mathematical reasoning. Utilize its ability to handle 338 programming languages and its extended context length of 128k tokens for complex code analysis. Use the Instruct variant to interact with users and generate tailored, high-performance code solutions that rival proprietary models like GPT-4 Turbo. Deploy efficient, scalable solutions using the open-source flexibility of DeepSeek-Coder-V2."
+```
 
 After editing the Modelfile, create and run the model:
 
-bash
+```bash
 
-ollama create mario -f ./Modelfile
-ollama run mario
+ollama create kuntai -f ./Modelfile
+ollama run kuntai
 
 Import Hugging Face Models: To use Hugging Face models with Ollama, download the model in GGUF or PyTorch format from Hugging Face, then modify a Modelfile to import it:
 
-bash
-
+```bash
 FROM ./huggingface_model.gguf
-ollama create custom_model -f Modelfile
-
-Once created, you can run it as:
-
-bash
-
-ollama run custom_model
+ollama create kuntai -f Modelfile
+ollama run kuntai
 
 REST API for Hugging Face Model: Integrate this custom model via Ollama’s REST API:
 
-bash
+```bash
 
     curl http://localhost:11434/api/generate -d '{
       "model": "custom_model",
       "prompt": "Explain quantum mechanics in simple terms."
-    }'
-
-By combining Ollama’s ability to manage models and Hugging Face’s extensive repository, you can create customized language models tailored to various problem-solving tasks in Kuntai, enhancing its capacity for both introspection and technical innovation."
     }'
 ```
 By combining Ollama’s ability to manage models and Hugging Face’s extensive repository, you can create customized language models tailored to various problem-solving tasks in Kuntai, enhancing its capacity for both introspection and technical innovation.stomized prompt model, first pull the desired model:
