@@ -85,10 +85,6 @@ EOL
 echo "Creating Kuntai model..."
 ollama create kuntai -f ./Modelfile
 
-# Run Kuntai
-echo "Running Kuntai..."
-ollama run kuntai
-
 # Prompt for creating a desktop shortcut
 read -p "Would you like to create a Kuntai.desktop icon for easy access? (yes/no): " create_desktop
 
@@ -99,5 +95,9 @@ else
     echo "Desktop icon creation skipped."
 fi
 
+# Run Kuntai
+echo "Running Kuntai..."
+ollama run kuntai
+
 echo "Kuntai is ready for you, are you ready for Kuntai?"
-	
+echo "type exit or press Ctrl+C to stop Kuntai"	
