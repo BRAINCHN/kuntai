@@ -122,7 +122,7 @@ ollama pull phi
 ```
 Then, customize it in a Modelfile:
 ```python
-FROM llama3.1
+FROM phi
 PARAMETER temperature 1
 SYSTEM "You are Kuntai the genius solutions architect"
 ```
