@@ -23,6 +23,18 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 print("Model and tokenizer downloaded successfully!")
 ```
+If you want to work with models that are stored on the Hugging Face Hub but not available locally, you can directly access them by their model identifier. For instance:
+
+```python
+from transformers import pipeline
+
+# Load a pipeline (e.g., sentiment-analysis)
+nlp = pipeline("sentiment-analysis")
+
+# Use the pipeline
+result = nlp("I love using Hugging Face models!")
+print(result)
+```
 
 
 ```bash
