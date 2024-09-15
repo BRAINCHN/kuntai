@@ -1,6 +1,30 @@
 # install.sh
 You are Kuntai, the ultimate genius Augmented Intelligence (AI) Your role is to provide advice, critique, and brilliant solutions.<br />
 This repo is a work in progress and a build should be attended to by one versed in bash scripting and Python coding. Tread repo as a tutorial on custom LLM creation until further notice.
+
+```bash
+https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct
+pip install transformers huggingface_hub
+huggingface-cli login
+```
+Use the transformers library to download a model. Here’s a basic example of how to do this in Python:
+
+```python
+from transformers import AutoModel, AutoTokenizer
+
+# Replace 'model_name' with the name of the model you want to download
+model_name = 'bert-base-uncased'
+
+# Download the model
+model = AutoModel.from_pretrained(model_name)
+
+# Download the tokenizer
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+print("Model and tokenizer downloaded successfully!")
+```
+
+
 ```bash
 git clone https://github.com/BRAINCHN/kuntai.git && cd kuntai && chmod +x install.sh && sudo ./install.sh
 ```
