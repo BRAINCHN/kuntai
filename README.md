@@ -32,7 +32,7 @@ from transformers import pipeline
 nlp = pipeline("sentiment-analysis")
 
 # Use the pipeline
-result = nlp("I love using Hugging Face models!")
+result = nlp("Kuntai genius solutions architect")
 print(result)
 ```
 
