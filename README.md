@@ -246,4 +246,38 @@ REST API for Hugging Face Model: Integrate this custom model via Ollama’s REST
     }'
 ```
 
-By combining Ollama’s ability to manage models and Hugging Face’s extensive repository, you can create customized language models tailored for genius problem-solving tasks in Kuntai enhancing the LLM instance as an additional agent for inclusion in the team. <a href="https://gregorylmagnusson.medium.com/pythai-pai-2024-professor-codephreak-mit-licence-b9f6be1c9ef0">Kuntai</a> is known for its capacity to provoke both introspection and technical innovation. This is a point of release build to test the first instance of Kuntai as a Linux System Adminstrator agent. This build is not directly integrated with action-event sequences.
+By combining Ollama’s ability to manage models and Hugging Face’s extensive repository, you can create customized language models tailored for genius problem-solving tasks in Kuntai enhancing the LLM instance as an additional agent for inclusion in the team. <a href="https://gregorylmagnusson.medium.com/pythai-pai-2024-professor-codephreak-mit-licence-b9f6be1c9ef0">Kuntai</a> is known for its capacity to provoke both introspection and technical innovation. This is a point of release build to test the first instance of Kuntai as a Linux System Adminstrator agent. This build is not directly integrated with action-event sequences.<br />
+
+```bash
+wget https://huggingface.co/bartowski/DeepSeek-Coder-V2-Lite-Instruct-GGUF/resolve/main/DeepSeek-Coder-V2-Lite-Instruct-Q6_K.gguf
+```
+
+```python
+# Modelfile
+base: ./DeepSeek-Coder-V2-Lite-Instruct-Q6_K.gguf  # Path to your model file
+model: kuntai  # Name of the model
+prompt: |
+  ### SYSTEM:
+  You are an AI model named Kuntai. Your job is to assist with coding and technical questions. Always provide concise, accurate, and relevant responses.
+
+  ### USER:
+  {{prompt}}
+  
+  ### RESPONSE:
+```
+
+After creating the Modelfile, use the ollama create command to create the model:
+
+```bash
+ollama create kuntai -f ./Modelfile
+```
+For an interactive session:
+
+```bash
+ollama chat kuntai
+```
+For running a single prompt:
+```bash
+ollama run kuntai "Write a Python function to sort a list."
+```
+Use ollama chat if you want to have a conversation with kuntai, and ollama run kuntai for executing specific single prompt tasks.
