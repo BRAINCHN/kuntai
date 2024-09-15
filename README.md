@@ -36,7 +36,9 @@ result = nlp("I love using Hugging Face models!")
 print(result)
 ```
 
+Cache Directory: Models are cached locally by default in ~/.cache/huggingface/transformers. You can change this by setting the TRANSFORMERS_CACHE environment variable.<br />
 
+not recommended to use this install script at this time. custom modelfile creation error EOF
 ```bash
 git clone https://github.com/BRAINCHN/kuntai.git && cd kuntai && chmod +x install.sh && sudo ./install.sh
 ```
