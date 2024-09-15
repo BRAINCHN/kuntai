@@ -271,13 +271,10 @@ After creating the Modelfile, use the ollama create command to create the model:
 ```bash
 ollama create kuntai -f ./Modelfile
 ```
-For an interactive session:
-
-```bash
-ollama chat kuntai
-```
 For running a single prompt:
 ```bash
 ollama run kuntai "Write a Python function to sort a list."
 ```
-Use ollama chat if you want to have a conversation with kuntai, and ollama run kuntai for executing specific single prompt tasks.
+```bash
+ollama run kuntai
+```
