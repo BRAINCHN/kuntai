@@ -278,3 +278,12 @@ ollama run kuntai "Write a Python function to sort a list."
 ```bash
 ollama run kuntai
 ```
+
+deepseek
+```bash
+Git LFS Details
+
+    SHA256: 1ff79f43ad5728d3179bf8fa7ee2993652f4306d6aeca9c35055f4f5b7b864cd
+    Pointer size: 136 Bytes
+    Size of remote file: 14.1 GB
+```
