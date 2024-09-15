@@ -102,24 +102,6 @@ To create a cuYou are building an AI system, Kuntai, designed to offer tough-lov
     Evaluation Metrics:
         User engagement, satisfaction, creativity in responses, and the effectiveness of intellectual stimulation are measured to ensure continuous improvement of Kuntai's responses.
 
-Part 2: Ollama Integration with Hugging Face Custom Model
-
-    Setting up Ollama: To integrate and run models from Hugging Face via Ollama, follow the steps for installation and usage:
-        Installation:
-            For Linux: curl -fsSL https://ollama.com/install.sh | sh
-            For macOS and Windows: Download the Ollama app.
-        Once installed, start by pulling or creating a model.
-
-    Running Models from the Library: For example, to run the Llama 3.1 model (8B version):
-
-```bash
-ollama run phi
-```
-To create a customized prompt model, first pull the desired model:
-
-```bash
-ollama pull phi
-```
 Then, customize it in a Modelfile:
 ```python
 FROM phi
