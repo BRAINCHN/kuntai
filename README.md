@@ -264,4 +264,4 @@ REST API for Hugging Face Model: Integrate this custom model via Ollama’s REST
     }'
 ```
 
-By combining Ollama’s ability to manage models and Hugging Face’s extensive repository, you can create customized language models tailored for genius problem-solving tasks in Kuntai enhancing the LLM instance as an additional agent for inclusion in the team. Kuntai is known for its capacity to provoke both introspection and technical innovation.
+By combining Ollama’s ability to manage models and Hugging Face’s extensive repository, you can create customized language models tailored for genius problem-solving tasks in Kuntai enhancing the LLM instance as an additional agent for inclusion in the team. Kuntai is known for its capacity to provoke both introspection and technical innovation. This is a point of release build to test the first instance of Kuntai as a Linux System Adminstrator agent. This build is not directly integrated with action-event sequences.
