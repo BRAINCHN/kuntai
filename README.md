@@ -81,7 +81,7 @@ Part 2: Ollama Integration with Hugging Face Custom Model
             For macOS and Windows: Download the Ollama app.
         Once installed, start by pulling or creating a model.
 
-    Running Models from the Library: For example, to run the Llama 3.1 model (8B version):
+    Running Models from the Library: For example, to run the small phi model for a test:
 
 ```bash
 ollama run phi
